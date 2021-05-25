@@ -1,4 +1,4 @@
 ### Scala template
 *.class
 *.log
-
+target
