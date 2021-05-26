@@ -1,6 +1,5 @@
 package org.zhouyc
 
-
 class Node(var value:Int, var next:Option[Node])
 
 class LinkedList(var head:Option[Node]){
@@ -33,6 +32,27 @@ class LinkedList(var head:Option[Node]){
     return false
   }
 
+  def insertAfterElement(value:Int, target:Int):Unit={
+    val new_node = new Node(value,None);
+    head match {
+      case None =>
+        head = Some(new_node);
+      case Some(head) =>
+        var curr_node = head
+        while (curr_node.next.isDefined && curr_node.value != target) {
+          curr_node = curr_node.next.get
+        }
+        curr_node.next match {
+          case None =>
+            new_node.next = None
+            curr_node.next = Some(new_node)
+          case Some(next) =>
+            new_node.next = Some(next)
+            curr_node.next = Some(new_node);
+        }
+    }
+  }
+
   def mkString():String={
     head.map(x=>{
       var node = x;
@@ -46,6 +66,7 @@ class LinkedList(var head:Option[Node]){
       result.mkString
     }).getOrElse("")
   }
+
 
 
 

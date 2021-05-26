@@ -11,6 +11,9 @@ object LinkedListTest{
     println(list.findElementByValue(4));
     println(list.findElementByValue(5));
     println(list.mkString())
+
+    list.insertAfterElement(9,2);
+    println(list.mkString())
   }
 }
 
