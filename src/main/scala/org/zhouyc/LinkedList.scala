@@ -19,17 +19,17 @@ class LinkedList(var head:Option[Node]){
     }
   }
 
-  def findElementByValue(value:Int): Boolean ={
+  def findElementByValue(value:Int): Option[Node] ={
     var std_node:Node = head.get;
     while(std_node.next.isDefined){
       if(value == std_node.value){
-        return  true
+        return  Some(std_node)
       }
       std_node = std_node.next.get
     }
     if(std_node.value == value)
-      return true
-    return false
+      return Some(std_node)
+    return None
   }
 
   def insertAfterElement(value:Int, target:Int):Unit={
@@ -53,6 +53,20 @@ class LinkedList(var head:Option[Node]){
     }
   }
 
+  def deleteByNode(node:Node): Unit ={
+    head.map(curr_node=>{
+      if(curr_node.equals(node)){
+        head = curr_node.next
+      }else{
+        var ptr:Node = head.get
+        while(ptr.next.isDefined && !ptr.next.get.equals(node)){
+          ptr = ptr.next.get
+        }
+        ptr.next = node.next
+      }
+    })
+  }
+
   def mkString():String={
     head.map(x=>{
       var node = x;
@@ -66,8 +80,4 @@ class LinkedList(var head:Option[Node]){
       result.mkString
     }).getOrElse("")
   }
-
-
-
-
 }
