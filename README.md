@@ -1,2 +1,2 @@
 # ScalaAlogorithms
-algorithms implementation in scala
+general algorithms implementation in scala
