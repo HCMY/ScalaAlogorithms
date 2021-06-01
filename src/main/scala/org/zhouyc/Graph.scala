@@ -46,8 +46,32 @@ class Graph(vertex: Array[String]){
     route
   }
 
-  def DFS(): Unit ={
-    //TODO
-  }
+  def DFS(srcNode:String, dstNode:String): ArrayBuffer[Int] ={
+    val srcIdx = vertex.indexOf(srcNode)
+    val dstIdx = vertex.indexOf(dstNode)
+    var visited = new mutable.HashSet[Int]()
+    var stack = new mutable.Stack[Int]()
+    var route = new ArrayBuffer[Int]()
 
+    route.append(srcIdx)
+    stack.push(srcIdx)
+    visited(srcIdx) = true
+
+    breakable {
+      while (stack.nonEmpty) {
+        val node = stack.pop()
+        for (currNode <- Range(0, vertex.length)) {
+          val flag = adj(node)(currNode)
+          if (flag == 1 && !visited.contains(currNode)) {
+            visited(currNode) = true
+            route.append(currNode)
+            stack.push(currNode)
+            if (currNode.equals(dstIdx))
+              break
+          }
+        }
+      }
+    }
+    route
+  }
 }

@@ -16,6 +16,9 @@ object GraphTest {
 
     val bfsRoute = graph.BFS("1","5")
     println(bfsRoute.mkString(" "))
+
+    val dfsRoute = graph.DFS("1","5")
+    println(dfsRoute.mkString(" "))
   }
 
 }
