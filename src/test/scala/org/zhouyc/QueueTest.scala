@@ -1,4 +1,4 @@
-package org.zhouyc
+package org.zhouyc.datastructure
 
 object QueueTest {
   def main(args: Array[String]): Unit = {

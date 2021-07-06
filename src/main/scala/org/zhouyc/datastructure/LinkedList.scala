@@ -1,4 +1,4 @@
-package org.zhouyc
+package org.zhouyc.datastructure
 
 class Node(var value:Int, var next:Option[Node])
 

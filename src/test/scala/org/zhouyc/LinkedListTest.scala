@@ -1,4 +1,4 @@
-package org.zhouyc
+package org.zhouyc.datastructure
 
 object LinkedListTest{
   def main(args: Array[String]): Unit = {

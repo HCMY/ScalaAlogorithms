@@ -1,4 +1,4 @@
-package org.zhouyc
+package org.zhouyc.datastructure
 
 object Sorts{
   def bubbleSort(array:Array[Int]): Array[Int] ={
