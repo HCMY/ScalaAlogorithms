@@ -5,7 +5,7 @@
   <version>1.0-SNAPSHOT</version>
   <inceptionYear>2008</inceptionYear>
   <properties>
-    <scala.version>2.13.5</scala.version>
+    <scala.version>2.11.12</scala.version>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
@@ -43,6 +43,23 @@
       <version>1.2.5</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>io.circe</groupId>
+      <artifactId>circe-core_2.11</artifactId>
+      <version>0.12.0-M3</version>
+    </dependency>
+    <dependency>
+      <groupId>io.circe</groupId>
+      <artifactId>circe-parser_2.11</artifactId>
+      <version>0.12.0-M3</version>
+    </dependency>
+    <dependency>
+      <groupId>io.circe</groupId>
+      <artifactId>circe-generic_2.11</artifactId>
+      <version>0.12.0-M3</version>
+    </dependency>
+
   </dependencies>
 
   <build>
